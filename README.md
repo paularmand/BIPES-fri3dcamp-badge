@@ -1,3 +1,8 @@
+# BIPES-fri3dcamp-badge
+
+Fork from BIPES with support for the fri3dcamp badge 2024
+Currently in development, but you can start to use it anyways.
+
 # BIPES: Block based Integrated Platform for Embedded Systems.
 
 ![BIPES](bipes.png)
