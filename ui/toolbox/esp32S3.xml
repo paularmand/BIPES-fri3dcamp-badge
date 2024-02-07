@@ -266,6 +266,14 @@
     <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
 
     <sep></sep>
+    <category name="Fri3dcamp Badge">
+      <block type="text">
+            <field name="TEXT">ToDo</field>
+      </block>
+
+    </category>
+
+    <sep></sep>
    <category name="BIPES">
     <block type="project_metadata">
       <value name="project_author">
