@@ -532,11 +532,6 @@ class files {
             });
         });
 
-//        mux.bufferPush (`f=open('${this.put_file_name}', 'w')\r`);
-//
-//        mux.bufferPush (`f.write('${decoderUint8}')\r`, () => {files.update_file_status(`Sent ${Files.put_file_data.length} bytes`)});
-//
-//        mux.bufferPush ("f.close()\r");
         mux.bufferPush ('\r\r\r');
         files.update_file_status(`File ${this.put_file_name} sent.`);
       break;
