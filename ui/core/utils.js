@@ -511,11 +511,32 @@ class files {
           mux.bufferPush ("storage.remount(\"/\", False)\r");
         } 
 
-        mux.bufferPush (`f=open('${this.put_file_name}', 'w')\r`);
+        const MAX_BUFFER_LENGTH = 128;
 
-        mux.bufferPush (`f.write('${decoderUint8}')\r`, () => {files.update_file_status(`Sent ${Files.put_file_data.length} bytes`)});
+        const fileNameCommand = `f=open('${this.put_file_name}', 'w')\r`;
+        const closeFileCommand = "f.close()\r";
 
-        mux.bufferPush ("f.close()\r");
+        mux.bufferPush(fileNameCommand, () => {
+            let data = decoderUint8;
+            while (data.length > 0) {
+                let chunk = data.substring(0, MAX_BUFFER_LENGTH);
+                while (chunk.endsWith('\\') || (chunk.endsWith('\\r') && chunk.length > 2)) {
+                    // Remove the last character (backslash or carriage return) from the chunk
+                    chunk = chunk.substring(0, chunk.length - 1);
+                }
+                mux.bufferPush(`f.write('${chunk}')\r`);
+                data = data.substring(chunk.length);
+            }
+            mux.bufferPush(closeFileCommand, () => {
+                files.update_file_status(`Sent ${decoderUint8.length} bytes`);
+            });
+        });
+
+//        mux.bufferPush (`f=open('${this.put_file_name}', 'w')\r`);
+//
+//        mux.bufferPush (`f.write('${decoderUint8}')\r`, () => {files.update_file_status(`Sent ${Files.put_file_data.length} bytes`)});
+//
+//        mux.bufferPush ("f.close()\r");
         mux.bufferPush ('\r\r\r');
         files.update_file_status(`File ${this.put_file_name} sent.`);
       break;
