@@ -302,11 +302,25 @@ class ST7789(ST77xx):
         super().init()
         self._set_color_mode(color_mode)
         delay_ms(50)
-        self._set_mem_access_mode(4, True, True, False)
-        self.inversion_mode(True)
+        self._set_mem_access_mode(4, True, True, True)
+        self.inversion_mode(False)
         delay_ms(10)
         self.write(ST77XX_NORON)
         delay_ms(10)
         self.fill(0)
         self.write(ST77XX_DISPON)
         delay_ms(500)
+
+#quick note to self:
+# import machine
+# import st7789py
+#
+# st7789_bl = machine.Pin(48, machine.Pin.OUT)
+# spi = machine.SPI(1, baudrate=20000000, polarity=1, phase=1, sck=machine.Pin(7), mosi=machine.Pin(6))
+#
+# display7789 = st7789py.ST7789(spi, 240, 280, reset=machine.Pin(48, machine.Pin.OUT), cs=machine.Pin(5, machine.Pin.OUT), dc=machine.Pin(4, machine.Pin.OUT), xstart=0, ystart=20)
+# display7789.init()
+# display7789.fill(st7789py.color565(0, 0, 0))
+# display7789.vline(30, 30, 100, st7789py.RED)
+# display7789.vline(60, 60, 100, st7789py.GREEN)
+# display7789.vline(90, 90, 100, st7789py.BLUE)

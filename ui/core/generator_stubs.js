@@ -5820,7 +5820,7 @@ Blockly.Python['st7789_init'] = function(block) {
   var code = 'st7789_blp.duty(100)\n';
 
       code += 'spi = machine.SPI(' + spi + ', baudrate=20000000, polarity=1, phase=1, sck=machine.Pin(' + sck + '), mosi=machine.Pin(' + mosi + '))\n';
-      code += 'display7789 = st7789py.ST7789(spi, 135, 240, reset=machine.Pin(' + reset + ', machine.Pin.OUT), cs=machine.Pin(' + cs + ', machine.Pin.OUT), dc=machine.Pin(' + dc + ', machine.Pin.OUT))\n';
+      code += 'display7789 = st7789py.ST7789(spi, 240, 300, reset=machine.Pin(' + reset + ', machine.Pin.OUT), cs=machine.Pin(' + cs + ', machine.Pin.OUT), dc=machine.Pin(' + dc + ', machine.Pin.OUT), xstart=0, ystart=0)\n';
       code += 'display7789.init()\n';
   return code;
 };
