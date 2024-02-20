@@ -104,7 +104,7 @@
 			["IO47/Spare IO 6", "47"],
 			["IO48/LCD nRESET", "48"]
 			],
-			"serial_packet_size":"500"
+			"serial_packet_size":"200"
 		},
 		"ESP32basic": {
 			"title":"<b>ESP32 (Basic)</b><br>",
