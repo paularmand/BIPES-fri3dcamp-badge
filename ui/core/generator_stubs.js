@@ -6698,3 +6698,20 @@ Blockly.Python['threepi_bump_right_is_pressed'] = function(block) {
 	var code = 'threepi_bump_sensors.right_is_pressed()';
 	return [code, Blockly.Python.ORDER_NONE];
 };
+
+////////////////////////////////////
+// Fri3dcamp Blocks
+////////////////////////////////////
+
+// joystick
+Blockly.Python['joystick_init'] = function(block) {
+  var value_deadzone = Blockly.Python.valueToCode(block, 'deadzone', Blockly.Python.ORDER_ATOMIC);
+  Blockly.Python.definitions_['import_joystick'] = 'from badge.joystick import joystick';
+  var code = 'joystick.init_and_calibrate(' + value_deadzone + ')\n';
+  return code;
+};
+
+Blockly.Python['joystick_read_action'] = function(block) {
+  var code = 'joystick.read_action()';
+  return [code, Blockly.Python.ORDER_NONE];
+};

@@ -12569,3 +12569,34 @@ Blockly.Blocks['data_value'] = {
   }
 };
 
+////////////////////////////////////
+// Fri3dcamp Blocks
+////////////////////////////////////
+
+// joystick
+Blockly.Blocks['joystick_init'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Joystick init and calibration");
+    this.appendValueInput("deadzone")
+        .setCheck("Number")
+        .appendField("Deadzone percentage [0 to 1], example: 0.1")
+        .appendField(new Blockly.FieldNumber(0.1, 0, 1, 2), "deadzone_field");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(135);
+    this.setTooltip("Use this before reading the joystick");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['joystick_read_action'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Joystick read action");
+    this.setOutput(true, "String");
+    this.setColour(135);
+ this.setTooltip("Returns left, right, up, down, leftup, leftdown, rightup or rightdown");
+ this.setHelpUrl("");
+  }
+};

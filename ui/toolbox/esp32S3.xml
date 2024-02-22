@@ -267,10 +267,16 @@
 
     <sep></sep>
     <category name="Fri3dcamp Badge">
-      <block type="text">
-            <field name="TEXT">ToDo</field>
-      </block>
-
+       <label text="joystick"></label>
+       <block type="joystick_init">
+         <value name="deadzone">
+           <shadow type="math_number">
+             <field name="NUM">0.1</field>
+           </shadow>
+         </value>
+       </block>
+       <block type="joystick_read_action">
+       </block>
     </category>
 
     <sep></sep>
