@@ -5820,8 +5820,10 @@ Blockly.Python['st7789_init'] = function(block) {
   var code = 'st7789_blp.duty(100)\n';
 
       code += 'spi = machine.SPI(' + spi + ', baudrate=20000000, polarity=1, phase=1, sck=machine.Pin(' + sck + '), mosi=machine.Pin(' + mosi + '))\n';
-      code += 'display7789 = st7789py.ST7789(spi, 240, 300, reset=machine.Pin(' + reset + ', machine.Pin.OUT), cs=machine.Pin(' + cs + ', machine.Pin.OUT), dc=machine.Pin(' + dc + ', machine.Pin.OUT), xstart=0, ystart=0)\n';
+      code += 'display7789 = st7789py.ST7789(spi, 300, 240, reset=machine.Pin(' + reset + ', machine.Pin.OUT), cs=machine.Pin(' + cs + ', machine.Pin.OUT), dc=machine.Pin(' + dc + ', machine.Pin.OUT), xstart=0, ystart=0)\n';
       code += 'display7789.init()\n';
+      code += 'display7789.inversion_mode(False)\n';
+      code += 'display7789._set_mem_access_mode(5, False, False, True)\n'
   return code;
 };
 
@@ -6711,7 +6713,17 @@ Blockly.Python['joystick_init'] = function(block) {
   return code;
 };
 
+Blockly.Python['joystick_read'] = function(block) {
+  var code = 'joystick.read()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
 Blockly.Python['joystick_read_action'] = function(block) {
   var code = 'joystick.read_action()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['joystick_read_vector'] = function(block) {
+  var code = 'joystick.read_vector()';
   return [code, Blockly.Python.ORDER_NONE];
 };

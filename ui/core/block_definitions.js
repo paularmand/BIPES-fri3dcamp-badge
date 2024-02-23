@@ -12600,3 +12600,25 @@ Blockly.Blocks['joystick_read_action'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['joystick_read'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Joystick [x, y]");
+    this.setOutput(true, null);
+    this.setColour(135);
+ this.setTooltip("Returns a list [x, y] both between -1 and 1. A zero means in the middle.");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['joystick_read_vector'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Joystick [angle, displacement]");
+    this.setOutput(true, null);
+    this.setColour(135);
+ this.setTooltip("Angle goes from 0 (right) over 90 (up), 180 (left) and 270 (down) up to 359. Displacement is between 0 (center) and 1 (edge).");
+ this.setHelpUrl("");
+  }
+};

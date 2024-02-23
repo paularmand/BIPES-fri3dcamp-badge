@@ -275,7 +275,11 @@
            </shadow>
          </value>
        </block>
+       <block type="joystick_read">
+       </block>
        <block type="joystick_read_action">
+       </block>
+       <block type="joystick_read_vector">
        </block>
     </category>
 
