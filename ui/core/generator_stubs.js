@@ -1853,73 +1853,75 @@ Blockly.Python["machine.ADCWiPy_adcchannel.deinit"] = function(block) {
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.init"] = function(block) {
-		var value_pIn = Blockly.Python.valueToCode(block, 'pIn', Blockly.Python.ORDER_ATOMIC);
-	var code = "machine.I2C.I2C.init(" + value_pIn + ")\n"; 
+		Blockly.Python.definitions_['import_machine.I2C'] = 'from machine import I2C';
+		var value_pScl = Blockly.Python.valueToCode(block, 'pScl', Blockly.Python.ORDER_ATOMIC);
+		var value_pSda = Blockly.Python.valueToCode(block, 'pSda', Blockly.Python.ORDER_ATOMIC);
+	var code = "I2C(scl=Pin(" + value_pScl + "), sda=Pin(" + value_pSda + "))\n";
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.deinit"] = function(block) {
-		Blockly.Python.definitions_['import_machine.I2C'] = 'import machine.I2C';
-	var code = "machine.I2C.I2C.deinit()\n"; 
+		Blockly.Python.definitions_['import_machine.I2C'] = 'from machine import I2C';
+	var code = "I2C.deinit()\n";
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.scan"] = function(block) {
-		Blockly.Python.definitions_['import_machine.I2C'] = 'import machine.I2C';
-	var code = "machine.I2C.I2C.scan()\n"; 
+		Blockly.Python.definitions_['import_machine.I2C'] = 'from machine import I2C';
+	var code = "I2C.scan()\n";
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.start"] = function(block) {
-		Blockly.Python.definitions_['import_machine.I2C'] = 'import machine.I2C';
-	var code = "machine.I2C.I2C.start()\n"; 
+		Blockly.Python.definitions_['import_machine.I2C'] = 'from machine import I2C';
+	var code = "I2C.start()\n";
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.stop"] = function(block) {
-		Blockly.Python.definitions_['import_machine.I2C'] = 'import machine.I2C';
-	var code = "machine.I2C.I2C.stop()\n"; 
+		Blockly.Python.definitions_['import_machine.I2C'] = 'from machine import I2C';
+	var code = "I2C.stop()\n";
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.readinto"] = function(block) {
 		var value_pIn = Blockly.Python.valueToCode(block, 'pIn', Blockly.Python.ORDER_ATOMIC);
-	var code = "machine.I2C.I2C.readinto(" + value_pIn + ")\n"; 
+	var code = "I2C.readinto(" + value_pIn + ")\n";
 	return [code, Blockly.JavaScript.ORDER_NONE]; 
 };
 Blockly.Python["machine.I2C_I2C.write"] = function(block) {
 		var value_pIn = Blockly.Python.valueToCode(block, 'pIn', Blockly.Python.ORDER_ATOMIC);
-	var code = "machine.I2C.I2C.write(" + value_pIn + ")\n"; 
+	var code = "I2C.write(" + value_pIn + ")\n";
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.readfrom"] = function(block) {
 		var value_pIn = Blockly.Python.valueToCode(block, 'pIn', Blockly.Python.ORDER_ATOMIC);
-	var code = "machine.I2C.I2C.readfrom(" + value_pIn + ")\n"; 
+	var code = "I2C.readfrom(" + value_pIn + ")\n";
 	return [code, Blockly.JavaScript.ORDER_NONE]; 
 };
 Blockly.Python["machine.I2C_I2C.readfrom_into"] = function(block) {
 		var value_pIn = Blockly.Python.valueToCode(block, 'pIn', Blockly.Python.ORDER_ATOMIC);
-	var code = "machine.I2C.I2C.readfrom_into(" + value_pIn + ")\n"; 
+	var code = "I2C.readfrom_into(" + value_pIn + ")\n";
 	return [code, Blockly.JavaScript.ORDER_NONE]; 
 };
 Blockly.Python["machine.I2C_I2C.writeto"] = function(block) {
 		var value_pIn = Blockly.Python.valueToCode(block, 'pIn', Blockly.Python.ORDER_ATOMIC);
-	var code = "machine.I2C.I2C.writeto(" + value_pIn + ")\n"; 
+	var code = "I2C.writeto(" + value_pIn + ")\n";
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.writevto"] = function(block) {
 		var value_pIn = Blockly.Python.valueToCode(block, 'pIn', Blockly.Python.ORDER_ATOMIC);
-	var code = "machine.I2C.I2C.writevto(" + value_pIn + ")\n"; 
+	var code = "I2C.writevto(" + value_pIn + ")\n";
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.readfrom_mem"] = function(block) {
 		var value_pIn = Blockly.Python.valueToCode(block, 'pIn', Blockly.Python.ORDER_ATOMIC);
-	var code = "machine.I2C.I2C.readfrom_mem(" + value_pIn + ")\n"; 
+	var code = "I2C.readfrom_mem(" + value_pIn + ")\n";
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.readfrom_mem_into"] = function(block) {
 		var value_pIn = Blockly.Python.valueToCode(block, 'pIn', Blockly.Python.ORDER_ATOMIC);
-	var code = "machine.I2C.I2C.readfrom_mem_into(" + value_pIn + ")\n"; 
+	var code = "I2C.readfrom_mem_into(" + value_pIn + ")\n";
 	return code;
 };
 Blockly.Python["machine.I2C_I2C.writeto_mem"] = function(block) {
 		var value_pIn = Blockly.Python.valueToCode(block, 'pIn', Blockly.Python.ORDER_ATOMIC);
-	var code = "machine.I2C.I2C.writeto_mem(" + value_pIn + ")\n"; 
+	var code = "I2C.writeto_mem(" + value_pIn + ")\n";
 	return code;
 };
 Blockly.Python["machine.Pin_Pin.init"] = function(block) {

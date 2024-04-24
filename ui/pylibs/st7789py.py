@@ -311,6 +311,29 @@ class ST7789(ST77xx):
         self.write(ST77XX_DISPON)
         delay_ms(500)
 
+# class badge_ST7789():
+#     def init(self, *, color_mode=ColorMode_65K | ColorMode_16bit):
+#         import machine
+#         spi = machine.SPI(1, baudrate=20000000, polarity=1, phase=1, sck=machine.Pin(7), mosi=machine.Pin(6))
+#         # self, spi, width, height, reset, dc, cs = None, backlight = None, xstart = -1, ystart = -1):
+#         super.init(self, spi, 300, 240,
+#                    machine.Pin(48, machine.Pin.OUT),
+#                    cs=machine.Pin(5, machine.Pin.OUT),
+#                    dc=machine.Pin(4, machine.Pin.OUT),
+#                    xstart=0,
+#                    ystart=0)
+#         self._set_color_mode(color_mode)
+#         delay_ms(50)
+#         self.inversion_mode(False)
+#         delay_ms(10)
+#         self._set_mem_access_mode(5, False, False, True)
+#         delay_ms(10)
+#         self.write(ST77XX_NORON)
+#         delay_ms(10)
+#         self.fill(0)
+#         self.write(ST77XX_DISPON)
+#         delay_ms(500)
+
 #quick note to self:
 # import machine
 # import st7789py

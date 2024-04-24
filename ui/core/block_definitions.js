@@ -4894,8 +4894,13 @@ Blockly.Blocks["machine.ADCWiPy_adcchannel.deinit"] = {
 
 Blockly.Blocks["machine.I2C_I2C.init"] = {
   init: function() {
-  this.appendValueInput("pIn")
-        .appendField(" I2C.init");
+  this.appendDummyInput()
+        .appendField("I2C.init");
+  this.appendValueInput("pScl")
+        .appendField(" pin SCL");
+        this.setColour(0);
+    this.appendValueInput("pSda")
+        .appendField(" pin SDA");
         this.setColour(0);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

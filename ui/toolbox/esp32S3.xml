@@ -267,20 +267,22 @@
 
     <sep></sep>
     <category name="Fri3dcamp Badge">
-       <label text="joystick"></label>
-       <block type="joystick_init">
+      <category name="Joystick">
+        <label text="Fri3dcamp joystick - always use the init block first"></label>
+        <block type="joystick_init">
          <value name="deadzone">
            <shadow type="math_number">
              <field name="NUM">0.1</field>
            </shadow>
          </value>
        </block>
-       <block type="joystick_read">
+        <block type="joystick_read">
        </block>
-       <block type="joystick_read_action">
+        <block type="joystick_read_action">
        </block>
-       <block type="joystick_read_vector">
+        <block type="joystick_read_vector">
        </block>
+      </category>
     </category>
 
     <sep></sep>
